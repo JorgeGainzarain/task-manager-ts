@@ -1,0 +1,88 @@
+{
+  "Commands": [
+    {
+      "description": "Display available commands",
+      "usage": ["help", "?", "commands"]
+    },
+    {
+      "description": "List all users",
+      "usage": ["listUsers"  , "users"]
+    },
+    {
+      "description": "List all tasks",
+      "usage": ["listTasks", "tasks"]
+    },
+    {
+      "description": "Add a new user",
+      "usage": ["addUser", "createUser"]
+    },
+    {
+      "description": "Add a new task",
+      "usage": ["addTask", "createTask"]
+    },
+    {
+      "description": "Delete a user by name",
+      "usage": ["deleteUser", "removeUser"]
+    },
+    {
+      "description": "Delete a task by description",
+      "usage": ["deleteTask", "removeTask"]
+    },
+    {
+      "description": "Edit a user's details by name",
+      "usage": ["editUser", "updateUser"]
+    },
+    {
+      "description": "Edit a task's details by description",
+      "usage": ["editTask", "updateTask"]
+    },
+    {
+      "description": "Mark a task as completed by description",
+      "usage": ["completeTask", "complete"]
+    },
+    {
+      "description": "List all tasks due within a specified date range",
+      "usage": ["dueTasks"]
+    }
+  ],
+  "Users" : [
+    "John Doe",
+    "Jane Smith",
+    "Michael Johnson",
+    "Sarah Williams"
+  ],
+  "Tasks" : [
+    {
+      "description" : "Reset the servers",
+      "dueDate" : "20/12/2024"
+    },
+    {
+      "description" : "Update website content",
+      "dueDate" : "25/12/2024"
+    },
+    {
+      "description" : "Create a new feature",
+      "dueDate" : "30/12/2024"
+    },
+    {
+      "description" : "Review code",
+      "dueDate" : "05/01/2025"
+    },
+    {
+      "description" : "Fix bugs",
+      "dueDate" : "10/01/2025"
+    },
+    {
+      "description" : "Implement new functionality",
+      "dueDate" : "15/01/2025"
+    },
+    {
+      "description" : "Review reports",
+      "dueDate" : "20/01/2025"
+    },
+    {
+      "description" : "Update software version",
+      "dueDate" : "25/01/2025"
+    }
+  ]
+}

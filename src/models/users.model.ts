@@ -8,6 +8,4 @@ export class User {
     this.name = name;
   }
 
-
-
 }

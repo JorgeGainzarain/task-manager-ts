@@ -1,7 +1,7 @@
-// Fetch all users
 import {User} from "../models/users.model";
+import sqlite, {Database} from "sqlite"
 
-export async function getAllUsers(db: sqlite3.Database) : Promise<Array<User>> {
+export async function getAllUsers(db: sqlite.Database) : Promise<Array<User>> {
     let rows = await db.all('SELECT * FROM users');
     let users = new Array<User>();
     rows.forEach((row) => {
@@ -11,7 +11,7 @@ export async function getAllUsers(db: sqlite3.Database) : Promise<Array<User>> {
 }
 
 // Fetch user by ID
-export async function getUserById(db: sqlite3.Database, userId: number) : Promise<Array<User>> {
+export async function getUserById(db: sqlite.Database, userId: number) : Promise<Array<User>> {
     let rows = await db.get('SELECT * FROM users WHERE id = ?', [userId]);
     let users = new Array<User>();
     if (rows) {
@@ -21,16 +21,26 @@ export async function getUserById(db: sqlite3.Database, userId: number) : Promis
 }
 
 // Create a new user
-export async function createUser(db: sqlite3.Database, user: User) {
-    await db.run('INSERT INTO users (name) VALUES (?, ?)', [user.id, user.name]);
+export async function addUser(db: Database, user: User) {
+    await db.run('INSERT INTO users (id, name) VALUES (?, ?)', [user.id, user.name]);
 }
 
 // Update a user
-export async function updateUser(db: sqlite3.Database, userId: number, name: string) {
+export async function updateUser(db: Database, userId: number, name: string) {
     await db.run('UPDATE users SET name = ? WHERE id = ?', [name, userId]);
 }
 
 // Delete a user
-export async function deleteUser(db: sqlite3.Database, userId: number) {
+export async function deleteUser(db: Database, userId: number) {
     await db.run('DELETE FROM users WHERE id = ?', [userId]);
+}
+
+export function usersFromJson(json: string[]): Array<User> {
+    let users = new Array<User>();
+    let i = 0;
+    json.forEach(value => {
+        i++;
+        users.push(new User(i, value));
+    })
+    return users;
 }
