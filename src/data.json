@@ -6,43 +6,43 @@
     },
     {
       "description": "List all users",
-      "usage": ["listUsers"  , "users"]
+      "usage": ["listusers"  , "users"]
     },
     {
       "description": "List all tasks",
-      "usage": ["listTasks", "tasks"]
+      "usage": ["listtasks", "tasks"]
     },
     {
-      "description": "Add a new user",
-      "usage": ["addUser", "createUser"]
+      "description": "Introduce a new user, using an existing user's id will edit their details",
+      "usage": ["edituser", "updateuser", "adduser", "useradd"]
     },
     {
-      "description": "Add a new task",
-      "usage": ["addTask", "createTask"]
+      "description": "Introduce a new task, using an existing task's id will edit their details",
+      "usage": ["edittask", "updatetask", "addtask", "taskadd"]
     },
     {
-      "description": "Delete a user by name",
-      "usage": ["deleteUser", "removeUser"]
+      "description": "Delete a user by id",
+      "usage": ["deleteuser", "removeuser"]
     },
     {
-      "description": "Delete a task by description",
-      "usage": ["deleteTask", "removeTask"]
+      "description": "Delete a task by id",
+      "usage": ["deletetask", "removetask"]
     },
     {
-      "description": "Edit a user's details by name",
-      "usage": ["editUser", "updateUser"]
+      "description": "Delete a task by user id",
+      "usage": ["deletetaskbyuser", "removetaskbyuser"]
     },
     {
-      "description": "Edit a task's details by description",
-      "usage": ["editTask", "updateTask"]
+      "description": "Assign a task to a user by id",
+      "usage": ["assigntask", "taskassign"]
     },
     {
-      "description": "Mark a task as completed by description",
-      "usage": ["completeTask", "complete"]
+      "description": "Mark a task as completed by id",
+      "usage": ["completetask", "complete"]
     },
     {
-      "description": "List all tasks due within a specified date range",
-      "usage": ["dueTasks"]
+      "description": "Terminate the application",
+      "usage": ["exit", "quit"]
     }
   ],
   "Users" : [

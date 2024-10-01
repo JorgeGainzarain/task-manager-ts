@@ -1,15 +1,19 @@
 import * as sqlite from 'sqlite';
-import * as fs from 'fs';
 import sqlite3 from'sqlite3';
-import {PathLike} from "node:fs";
+import * as fs from "node:fs";
 
 
 
 
 export async function initializeDatabase(dbPath: string) {
 
-    if(fs.existsSync(dbPath)) {
-        fs.unlinkSync(dbPath);
+    // Check if the database file exists
+    if (fs.existsSync(dbPath)) {
+        console.log('Database already exists. Skipping initialization.');
+        return await sqlite.open({
+            filename: dbPath,
+            driver: sqlite3.Database
+        });
     }
 
     const db = await sqlite.open({
